@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,17 +14,12 @@ public class AppConfig {
     public Actor actor() {
         return new Actor("Brad Pitt","Male",46);
     }
-    @Bean
-    public Actor actor1() {
-        return new Actor("Leonardo DiCaprio","Male",44);
-    }
-    @Bean
-    @Qualifier("a")
-    public Actor actor2() {
-        return new Actor("Christoph Waltz","Male",62);
-    }
     @Bean(name = "movie")
     public Movie movie() {
         return new Movie();
+    }
+    @Bean
+    public BeanLifecycleDemoBean beanLifecycleDemoBean() {
+        return new BeanLifecycleDemoBean();
     }
 }
