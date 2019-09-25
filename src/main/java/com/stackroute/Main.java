@@ -9,8 +9,5 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         Movie obj = context.getBean("movie",Movie.class);
         obj.display();
-        Movie obj2 = context.getBean("movie",Movie.class);
-        obj2.display();
-        System.out.println(obj==obj2);
     }
 }
